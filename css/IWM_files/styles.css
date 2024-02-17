@@ -1,0 +1,150 @@
+/* Estilos generales */
+body {
+    background: url(#) no-repeat center center fixed;
+    background-size: cover;
+    background-color: rgb(26, 22, 22);
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    transition: background-color 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+/* Estilos del contenedor principal */
+.kv {
+    background-color: rgba(3, 3, 3, 0.95);
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(65, 24, 211, 0.8);
+    transition: background-color 0.3s ease-in-out;
+    border: 2px solid transparent;
+    animation: borderPulse 1.9s;
+    overflow: hidden;
+}
+
+/* Animación de pulso del borde */
+@keyframes borderPulse {
+    0%, 100% {
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    50% {
+        border-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Estilos de la lista y enlaces */
+ul {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #FFD700;
+}
+
+/* Estilos del centro */
+.center {
+    text-align: center;
+}
+
+/* Estilos del nick */
+.nick {
+    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 2%;
+    letter-spacing: 2px;
+}
+
+/* Estilos del subtítulo */
+.st {
+    font-size: 2rem;
+}
+
+/* Estilos del título giratorio */
+.sexo-title {
+    transform: rotateX(33deg) rotateY(30deg);
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.9), 5px 5px 0 rgba(255, 255, 255, 0.7),
+    8px 8px 0 rgba(255, 255, 255, 0.5);
+    animation: awesomeRotate 4s infinite;
+}
+
+/* Animación de rotación asombrosa */
+@keyframes awesomeRotate {
+    0% {
+        transform: scale3d(1, 1, 1) rotateX(0deg);
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0), 2px 2px 0 rgba(255, 255, 255, 0.9),
+        2px 4px 0 rgba(255, 255, 255, 0.7), 2px 6px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: scale3d(1.5, 1.5, 1.5) rotateX(50deg);
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 2px 2px 0 rgba(255, 255, 255, 0.9),
+        2px 6px 0 rgba(255, 255, 255, 0.7), 2px 10px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1) rotateX(0deg);
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0), 2px 2px 0 rgba(255, 255, 255, 0.9),
+        2px 4px 0 rgba(255, 255, 255, 0.7), 2px 6px 0 rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Estilos del contenedor de video */
+.video-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Estilos del video con desenfoque */
+.video-container video {
+    min-width: 120%;
+    min-height: 90%;
+    width: auto;
+    height: auto;
+    filter: blur(12px);
+    -webkit-filter: blur(12px);
+    transition: filter 0.5s ease-in-out;
+}
+
+/* Desenfoque reducido al pasar el ratón sobre el contenedor de video */
+.video-container:hover video {
+    filter: blur(8px);
+}
+
+/* Estilos del patrón de fondo */
+.video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: url('../../media/3px-tile.png');
+    background-repeat: repeat;
+}
